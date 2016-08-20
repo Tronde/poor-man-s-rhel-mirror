@@ -1,0 +1,48 @@
+# The poor man's RHEL mirror
+
+In this repository I collected some small scripts to set up a local mirror server for Red Hat Repositories. I called it 'poor man's mirror' because it is only capable of providing basic functionallity and could not compete with Red Hat's sattelite server.
+
+You find in each script a short description and comments on how to use it. The following sections give you a short overview, too.
+
+***Notice:*** If you find any errors in the scripts please be so kind and file a short report using the issue function here on GitHub. While English is not my first language, there might be some mistakes here. If you find some please report them, too. And last but not least, if you have trouble understanding this text and would like to have a German translation, feel free to ask for it.
+
+## do_reposync.sh
+
+This is the most important script to create a local Red Had mirror. It is used to synchronize a RHEL-Repository to a directory on a host in your LAN to build a local mirror server. The server where this script should be used on needs to have a valid subscription for the repository which should be synchronized.
+
+## create_yum_repo.sh
+
+This script creates a YUM-Repository on your host, which could be used to distribute RPM-Packages to other hosts. You could use it to create repos for your own packages or to set up repos for your different stages where you provide the original Red Hat RPMs for each stage.
+
+## rsync_repo.sh
+
+This script is for the use case where you want to provide separated stage repositories in a staging environment with multiple stages like T-, E-, I-, Q- and P-Stage.
+
+You could use `reposync` to sync one or more RHEL repos to each stage repo on your local mirror. But this would cost you a large amount of your bandwith and local disk space. With `rsync_repo.sh` you have to sync the Red Hat repo(s) only once and `rsync` them to the stage repos. The script uses hardlinks to spare your disk space.
+
+## refresh_repo.sh
+
+When you have added some new RPM packages to your repository, you have to refresh the metadata DB to be able to install them on connected hosts. This could be done by this script.
+
+## Wrapper-Scripts
+
+In my use case I have four different stages (E, I, Q and P). I use the following wrapper scripts to update them.
+
+ * update_rhel-e-stage.sh
+ * update_rhel-i-stage.sh
+ * update_rhel-q-stage.sh
+ * update_rhel-p-stage.sh
+
+Each stage is upated with packages from the stage before, e.g. `update_rhel-e-stage.sh` calls `rsync_repo.sh` to `rsync` the packages from the local mirror to the e-stage-repo, `update_rhel-i-stage.sh` does the same but uses the packages from the e-stage-repo to `rsync` them to the i-stage-repo and so on.
+
+In addition I wrote the wrapper `update_multiple_stages.sh` to call multiple wrappers to update my stage repos.
+
+## update_mirror_packages_and_erratas.sh
+
+If you would like to provide Red Hat Errata Information to systems not connected to the internet, you could use this script. You specify the repos on your local  mirror where the errata information should be included. The script runs reposync, updates your stage repos and implements the errata information. With that you are ready to go, to install Red Hat Advisory on your hosts.
+
+# Links and sources
+
+ * [How to create a local mirror of the latest update for Red Hat Enterprise Linux 5, 6, 7 without using Satellite server?](https://access.redhat.com/solutions/23016)
+ * [How to use "createrepo" or "reposync" to create a local repository for updates](https://access.redhat.com/solutions/9892)
+ * [How to update security Erratas on system which is not connected to internet ?](https://access.redhat.com/solutions/55654)
