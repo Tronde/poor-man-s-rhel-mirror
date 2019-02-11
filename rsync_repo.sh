@@ -7,8 +7,8 @@
 # License: MIT copyright (c) 2016 Joerg Kastning <joerg.kastning(aet)uni-bielefeld(dot)de>
 
 # Variables ########################################################
-LOG="/var/log/rsync_repo.log"
-BASEDIR="/var/www/html/local-rhel-7-repo/" # Path where the local repos are stored.
+ScriptName=`basename ${0}`
+. config
 PACKAGELIST_PATH=""
 
 # Functions #######################################################

@@ -10,15 +10,10 @@
 ##############################################################################
 
 # Variables ##################################################################
-LOG="/var/log/update_mirror.log"
-PROGDIR="/root/bin"
-CACHEDIR="/var/cache/yum/x86_64/7Server/rhel-7-server-rpms"
-TARGETGZFILENAME="updateinfo.xml.gz"
-TARGETFILENAME="updateinfo.xml"
-REPODIR="/data/local-rhel-7-repo"
-LOCALREPOS=(rhel-e-stage rhel-i-stage rhel-q-stage rhel-p-stage)
+ScriptName=`basename ${0}`
+. config
 
-# Funktions #################################################################
+# Functions #################################################################
 deploy_updateinfo()
 {
   /usr/bin/yum clean all
