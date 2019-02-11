@@ -1,7 +1,7 @@
 #!/bin/bash
 # Sychronisation von zwei Paketquellen auf dem lokalen Spiegelserver
 # Description:
-# This script could be used to synchronize to package repositories
+# This script could be used to synchronize two package repositories
 # on the local mirror server.
 #
 # License: MIT copyright (c) 2016 Joerg Kastning <joerg.kastning(aet)uni-bielefeld(dot)de>
