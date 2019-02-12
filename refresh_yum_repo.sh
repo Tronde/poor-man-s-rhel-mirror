@@ -6,8 +6,8 @@
 # License: MIT copyright (c) 2016 Joerg Kastning <joerg.kastning(aet)uni-bielefeld(dot)de>
 
 # Variablen ###################################################################
-ScriptName=`basename ${0}`
-. config
+SCRIPTNAME=`basename ${0}`
+. CONFIG
 REPONAME="" # Name of the repo which should be refreshed
 
 # Funktionen ##################################################################

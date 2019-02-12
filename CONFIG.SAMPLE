@@ -1,5 +1,5 @@
 # This is the sample configuration file for the poor man's rhel mirror ########
-# Please run `cp config.sample config` before editing this file ###############
+# Please run `cp CONFIG.SAMPLE CONFIG` before editing this file ###############
 # Variables defined here are used in the different scripts
 #
 # Set the DIR containing the files of this repo
@@ -18,7 +18,7 @@ HOST="http://fqdn" # FQDN of the local mirror server
 BASEDIR="/var/www/html/local-rhel-7-repo/" # In this dir the new repo is created
 
 # Set location to store log files using script name as file name
-LOG="/var/log/${ScriptName}.log"
+LOG="/var/log/${SCRIPTNAME}.log"
 
 # Variables for do_reposync.sh ###############################################
 REPOID=(rhel-7-server-rpms rhel-server-rhscl-7-rpms rhel-7-server-optional-rpms rhel-7-server-extras-rpms rhel-7-server-thirdparty-oracle-java-rpms rhel-7-server-supplementary-rpms)

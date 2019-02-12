@@ -10,8 +10,8 @@
 # License: MIT copyright (c) 2016 Joerg Kastning <joerg.kastning(aet)uni-bielefeld(dot)de>
 
 # Variables
-ScriptName=`basename ${0}`
-. config
+SCRIPTNAME=`basename ${0}`
+. CONFIG
 
 # Main
 echo \# `date +%Y-%m-%dT%H:%M` - START REPOSYNC \# > $LOG

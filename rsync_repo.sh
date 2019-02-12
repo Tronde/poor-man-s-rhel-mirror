@@ -7,8 +7,8 @@
 # License: MIT copyright (c) 2016 Joerg Kastning <joerg.kastning(aet)uni-bielefeld(dot)de>
 
 # Variables ########################################################
-ScriptName=`basename ${0}`
-. config
+SCRIPTNAME=`basename ${0}`
+. CONFIG
 PACKAGELIST_PATH=""
 
 # Functions #######################################################
