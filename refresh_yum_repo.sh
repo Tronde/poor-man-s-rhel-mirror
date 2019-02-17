@@ -7,7 +7,8 @@
 
 # Variablen ###################################################################
 SCRIPTNAME=`basename ${0}`
-. CONFIG
+PROGDIR=$(dirname $(readlink -f ${0}))
+. $PROGDIR/CONFIG
 REPONAME="" # Name of the repo which should be refreshed
 
 # Funktionen ##################################################################

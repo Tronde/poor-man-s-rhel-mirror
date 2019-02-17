@@ -1,16 +1,6 @@
 # This is the sample configuration file for the poor man's rhel mirror ########
 # Please run `cp CONFIG.SAMPLE CONFIG` before editing this file ###############
 # Variables defined here are used in the different scripts
-#
-# Set the DIR containing the files of this repo
-# This variable is used in the following scripts:
-# update_mirror_packages_and_erratas.sh
-# update_multiple_stages.sh
-# update_rhel-e-stage.sh
-# update_rhel-i-stage.sh
-# update_rhel-q-stage.sh
-# update_rhel-p-stage.sh
-PROGDIR="/root/bin"
 
 # Set parameters for your mirror server
 # used in create_yum_repo.sh, refresh_yum_repo.sh and rsync_repo.sh

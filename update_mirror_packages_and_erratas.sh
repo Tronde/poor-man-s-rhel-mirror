@@ -11,7 +11,8 @@
 
 # Variables ##################################################################
 SCRIPTNAME=`basename ${0}`
-. CONFIG
+PROGDIR=$(dirname $(readlink -f ${0}))
+. $PROGDIR/CONFIG
 
 # Functions #################################################################
 deploy_updateinfo()

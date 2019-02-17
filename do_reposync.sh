@@ -11,7 +11,8 @@
 
 # Variables
 SCRIPTNAME=`basename ${0}`
-. CONFIG
+PROGDIR=$(dirname $(readlink -f ${0}))
+. $PROGDIR/CONFIG
 
 # Main
 echo \# `date +%Y-%m-%dT%H:%M` - START REPOSYNC \# > $LOG
