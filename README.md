@@ -15,6 +15,10 @@ To use the poor man's mirror you need at least:
  * The packages 'reposync' and 'createrepo' installed
  * All other packages needed should be installed via yum dependency resolution
 
+## CONFIG.SAMPLE
+
+An example for the main configuration file. Copy this file or move it to be named CONFIG before edit and adjusting it to your needs. It contains the variables used by the other scripts to configure the mirror server. Here you specify which repos you would like to mirror and where to save the data.
+
 ## do_reposync.sh
 
 This is the most important script to create a local Red Hat mirror. It is used to synchronize a RHEL-Repository to a directory on a host in your LAN to build a local mirror server. The server where this script should be used on needs to have a valid subscription for the repository which should be synchronized.
