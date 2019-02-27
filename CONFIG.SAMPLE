@@ -12,7 +12,6 @@ LOG="/var/log/${SCRIPTNAME}.log"
 
 # Variables for do_reposync.sh ###############################################
 REPOID=(rhel-7-server-rpms rhel-server-rhscl-7-rpms rhel-7-server-optional-rpms rhel-7-server-extras-rpms rhel-7-server-thirdparty-oracle-java-rpms rhel-7-server-supplementary-rpms)
-DOWNLOADPATH="/rpm-repo"
 
 # Variables for update_mirror_packages_and_erratas ##########################
 CACHEDIR="/var/cache/yum/x86_64/7Server/rhel-7-server-rpms"
