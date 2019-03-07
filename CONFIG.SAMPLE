@@ -10,12 +10,9 @@ BASEDIR="/var/www/html/local-rhel-7-repo/" # In this dir the new repo is created
 # Set location to store log files using script name as file name
 LOG="/var/log/${SCRIPTNAME}.log"
 
-# Variables for do_reposync.sh ###############################################
-REPOID=(rhel-7-server-rpms rhel-server-rhscl-7-rpms rhel-7-server-optional-rpms rhel-7-server-extras-rpms rhel-7-server-thirdparty-oracle-java-rpms rhel-7-server-supplementary-rpms)
+# Variables for do_reposync.sh and update_mirror_packages_and_erratas #######
+REPOID=(rhel-7-server-rpms rhel-server-rhscl-7-rpms rhel-7-server-optional-rpms rhel-7-server-extras-rpms rhel-7-server-supplementary-rpms)
 
 # Variables for update_mirror_packages_and_erratas ##########################
-CACHEDIR="/var/cache/yum/x86_64/7Server/rhel-7-server-rpms"
 TARGETGZFILENAME="updateinfo.xml.gz"
 TARGETFILENAME="updateinfo.xml"
-REPODIR="/data/local-rhel-7-repo"
-LOCALREPOS=(rhel-e-stage rhel-i-stage rhel-q-stage rhel-p-stage)
