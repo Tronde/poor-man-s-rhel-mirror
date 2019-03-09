@@ -56,7 +56,7 @@ If you would like to provide Red Hat Errata Information to systems not connected
 
 # Log files
 
-All scripts log their STDOUT to */var/log/<SCRIPTNAME>.log*. STDERR is not redirected because I run the scripts via cron and would like to get notifed by email if something was written to STDOUT.
+All scripts log their STDOUT to `/var/log/<SCRIPTNAME>.log`. STDERR is not redirected because I run the scripts via cron and would like to get notifed by email if something was written to STDOUT.
 
 # Links and sources
 
