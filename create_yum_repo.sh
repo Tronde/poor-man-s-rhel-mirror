@@ -7,10 +7,10 @@
 # License: MIT copyright (c) 2016 Joerg Kastning <joerg.kastning(aet)uni-bielefeld(dot)de>
 
 # Variablen ###################################################################
-HOST="http://fqdn" # FQDN of the local mirror server
-BASEDIR="/var/www/html/local-rhel-7-repo/" # In this dir the new repo is created
+SCRIPTNAME=`basename ${0}`
+PROGDIR=$(dirname $(readlink -f ${0}))
+. $PROGDIR/CONFIG
 REPONAME="" # Name for the new repository
-LOG="/var/log/create_yum_repo.log"
 
 # Funktionen ##################################################################
 usage()
@@ -19,9 +19,7 @@ usage()
   usage: $0 OPTIONS
   This script creates a new YUM-Repository on the local host.
 
-  Before the first run the variables BASEDIR and HOST needs to be defined.
-  REPONAME could be defined in the script itself or passed to the script by
-  parameter.
+  REPONAME is passed to the script by parameter.
 
   OPTIONS:
   -h Shows this text.

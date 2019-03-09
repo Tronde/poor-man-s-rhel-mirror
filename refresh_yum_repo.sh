@@ -6,10 +6,10 @@
 # License: MIT copyright (c) 2016 Joerg Kastning <joerg.kastning(aet)uni-bielefeld(dot)de>
 
 # Variablen ###################################################################
-HOST="http://fqdn" # FQDN of the local mirror server
-BASEDIR="/var/www/html/local-rhel-7-repo/" # Dir with the repos of the mirror
+SCRIPTNAME=`basename ${0}`
+PROGDIR=$(dirname $(readlink -f ${0}))
+. $PROGDIR/CONFIG
 REPONAME="" # Name of the repo which should be refreshed
-LOG="/var/log/refresh_yum_repo.log"
 
 # Funktionen ##################################################################
 usage()
@@ -19,9 +19,7 @@ usage()
   This script refreshes the metadata of your yum repository after you have
   added some new RPMs.
   
-  Before the first run the variables BASEDIR and HOST needs to be defined.
-  REPONAME could be defined in the script itself or passed to the script by
-  parameter.
+  REPONAME is passed to the script by parameter.
 
   OPTIONS:
   -h Shows this text

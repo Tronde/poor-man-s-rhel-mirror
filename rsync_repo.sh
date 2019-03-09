@@ -1,14 +1,15 @@
 #!/bin/bash
 # Sychronisation von zwei Paketquellen auf dem lokalen Spiegelserver
 # Description:
-# This script could be used to synchronize to package repositories
+# This script could be used to synchronize two package repositories
 # on the local mirror server.
 #
 # License: MIT copyright (c) 2016 Joerg Kastning <joerg.kastning(aet)uni-bielefeld(dot)de>
 
 # Variables ########################################################
-LOG="/var/log/rsync_repo.log"
-BASEDIR="/var/www/html/local-rhel-7-repo/" # Path where the local repos are stored.
+SCRIPTNAME=`basename ${0}`
+PROGDIR=$(dirname $(readlink -f ${0}))
+. $PROGDIR/CONFIG
 PACKAGELIST_PATH=""
 
 # Functions #######################################################

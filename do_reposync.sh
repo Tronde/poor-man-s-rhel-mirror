@@ -9,20 +9,22 @@
 # Author: Joerg Kastning <joerg.kastning@uni-bielefel.de>
 # License: MIT copyright (c) 2016 Joerg Kastning <joerg.kastning(aet)uni-bielefeld(dot)de>
 
-LOG="/var/log/do_reposync.log"
-REPOID=(rhel-7-server-rpms rhel-server-rhscl-7-rpms rhel-7-server-optional-rpms rhel-7-server-extras-rpms rhel-7-server-thirdparty-oracle-java-rpms rhel-7-server-supplementary-rpms)
-DOWNLOADPATH="/rpm-repo"
+# Variables
+SCRIPTNAME=`basename ${0}`
+PROGDIR=$(dirname $(readlink -f ${0}))
+. $PROGDIR/CONFIG
 
+# Main
 echo \# `date +%Y-%m-%dT%H:%M` - START REPOSYNC \# > $LOG
 
 for REPO in "${REPOID[@]}"
   do
-    reposync --gpgcheck -l --repoid=$REPO --download_path=$DOWNLOADPATH --downloadcomps --download-metadata -n >> $LOG
-    cd $DOWNLOADPATH/$REPO
+    reposync --gpgcheck -l --repoid=$REPO --download_path=$BASEDIR --downloadcomps --download-metadata -n >> $LOG
+    cd $BASEDIR/$REPO
     if [[ -e comps.xml ]]; then
-      createrepo -v $DOWNLOADPATH/$REPO -g comps.xml >> $LOG
+      createrepo -v $BASEDIR/$REPO -g comps.xml >> $LOG
     else
-      createrepo -v $DOWNLOADPATH/$REPO >> $LOG
+      createrepo -v $BASEDIR/$REPO >> $LOG
     fi
 done
 
