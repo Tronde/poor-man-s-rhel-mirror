@@ -41,14 +41,14 @@ deploy_updateinfo()
 
 # Main ##############################################################
 echo \# `date +%Y-%m-%dT%H:%M` - Update Local Mirror \# > $LOG
-bash $PROGDIR/do_reposync.sh >> $LOG 2>&1
+bash $PROGDIR/do_reposync.sh >> $LOG
 
 echo "\n" >> $LOG
 echo \# `date +%Y-%m-%dT%H:%M` - Implement Errata-Information \# >> $LOG
-remove_older_updateinfo >> $LOG 2>&1
-deploy_updateinfo >> $LOG 2>&1
+remove_older_updateinfo >> $LOG
+deploy_updateinfo >> $LOG
 echo "\n" >> $LOG
 echo \# `date +%Y-%m-%dT%H:%M` - Update rhel-STAGE-repositories \# >> $LOG
-bash $PROGDIR/update_multiple_stages.sh >> $LOG 2>&1
+bash $PROGDIR/update_multiple_stages.sh >> $LOG
 echo \# `date +%Y-%m-%dT%H:%M` - End of processing \# >> $LOG
 # End ###############################################################
