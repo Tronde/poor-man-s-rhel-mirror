@@ -1,17 +1,17 @@
 # The poor man's RHEL mirror
 
-In this repository I collected some small scripts to set up a local mirror server for Red Hat Repositories. I called it 'poor man's mirror' because it is only capable of providing basic functionallity and could not compete with Red Hat's sattelite server.
+In this repository I have collected some small scripts to set up a local mirror server for Red Hat Repositories. I called it 'poor man's mirror' because it is only capable of providing basic functionallity and could not compete with Red Hat's sattelite server.
 
 You find in each script a short description and comments on how to use it. The following sections give you a short overview, too.
 
-***Notice:*** If you find any errors in the scripts please be so kind and file a short report using the issue function here on GitHub. While English is not my first language, there might be some mistakes here. If you find some please report them, too. And last but not least, if you have trouble understanding this text and would like to have a German translation, feel free to ask for it.
+***Notice:*** If you find any errors in the scripts please be so kind and file a short report using the issue function here on GitHub. Since English is not my first language, there might be some mistakes in this text. If you find some please report them, too.
 
 ## Requirements
 
 To use the poor man's mirror you need at least:
 
  * A RHEL server with a valid subscription
- * A webserver of you choice serving the mirrored repos to other hosts in your LAN
+ * A webserver of your choice serving the mirrored repos to other hosts in your LAN
  * The packages 'reposync' and 'createrepo' installed
  * All other packages needed should be installed via yum dependency resolution
 
@@ -52,7 +52,11 @@ In addition I wrote the wrapper `update_multiple_stages.sh` to call multiple wra
 
 ## update_mirror_packages_and_erratas.sh
 
-If you would like to provide Red Hat Errata Information to systems not connected to the internet, you could use this script. You specify the repos on your local  mirror where the errata information should be included. The script runs reposync, updates your stage repos and implements the errata information. With that you are ready to go, to install Red Hat Advisory on your hosts.
+If you would like to provide Red Hat Errata Information to systems not connected to the internet, you could use this script. You specify the repos on your local  mirror where the errata information should be included. The script runs reposync, update your stage repos and implements the errata information. With that you are ready to go, to install Red Hat Advisory on your hosts.
+
+# Log files
+
+All scripts log their STDOUT to */var/log/<SCRIPTNAME>.log*. STDERR is not redirected because I run the scripts via cron and would like to get notifed by email if something was written to STDOUT.
 
 # Links and sources
 
