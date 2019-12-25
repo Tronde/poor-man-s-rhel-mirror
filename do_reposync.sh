@@ -19,13 +19,7 @@ echo \# `date +%Y-%m-%dT%H:%M` - START REPOSYNC \# > $LOG
 
 for REPO in "${REPOID[@]}"
   do
-    reposync --gpgcheck -l --repoid=$REPO --download_path=$BASEDIR --downloadcomps --download-metadata -n >> $LOG
-    cd $BASEDIR/$REPO
-    if [[ -e comps.xml ]]; then
-      createrepo -v $BASEDIR/$REPO -g comps.xml >> $LOG
-    else
-      createrepo -v $BASEDIR/$REPO >> $LOG
-    fi
+    reposync --repoid=$REPO --download-path=$BASEDIR --downloadcomps --download-metadata -n >> $LOG
 done
 
 echo \# `date +%Y-%m-%dT%H:%M` - END REPOSYNC \# >> $LOG
