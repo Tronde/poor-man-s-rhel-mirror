@@ -7,7 +7,7 @@
 # be synchronized.
 #
 # Author: Joerg Kastning <joerg.kastning@uni-bielefel.de>
-# License: MIT copyright (c) 2016 Joerg Kastning <joerg.kastning(aet)uni-bielefeld(dot)de>
+# License: MIT copyright (c) 2019 Joerg Kastning <joerg.kastning(aet)uni-bielefeld(dot)de>
 
 # Variables
 SCRIPTNAME=`basename ${0}`
