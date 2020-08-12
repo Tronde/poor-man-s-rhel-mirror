@@ -39,7 +39,7 @@ check()
 
 create_repo()
 {
-mkdir $BASEDIR$REPONAME
+mkdir -p ${BASEDIR}${REPONAME}/Packages
 createrepo --database $BASEDIR$REPONAME 
 REPOID=`echo $REPONAME | tr "[a-z]" "[A-Z]"`
 
