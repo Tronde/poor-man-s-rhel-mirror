@@ -1,6 +1,6 @@
 # The poor man's RHEL mirror
 
-In this repository I have collected some small scripts to set up a local mirror server for Red Hat Repositories. I called it 'poor man's mirror' because it is only capable of providing basic functionallity and could not compete with Red Hat's sattelite server.
+In this repository I have collected some small scripts to set up a local mirror server for Red Hat Repositories. I called it 'poor man's mirror' because it is only capable of providing basic functionallity and could not compete with Red Hat's [Satellite](https://www.redhat.com/en/technologies/management/satellite) server.
 
 You find in each script a short description and comments on how to use it. The following sections give you a short overview, too.
 
