@@ -4,7 +4,9 @@ In this repository I have collected some small scripts to set up a local mirror 
 
 You find in each script a short description and comments on how to use it. The following sections give you a short overview, too.
 
-***Notice:*** If you find any errors in the scripts please be so kind and file a short report using the issue function here on GitHub. Since English is not my first language, there might be some mistakes in this text. If you find some please report them, too.
+***Notice:*** The branches `rhel7` and `rhel8` in this repository contain the current stable version for the respective ditribution major version. To use this project just clone or checkout the branch that matches your distribution. New features and bugfixes will be pushed to both branches in case they are compatible with the respective RHEL version.
+
+***Request:*** If you find any errors in the scripts please be so kind and file a short report using the issue function here on GitHub. Since English is not my first language, there might be some mistakes in this text. If you find some please report them, too.
 
 ## Requirements
 
