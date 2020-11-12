@@ -39,18 +39,18 @@ check()
 
 do_sync_repo()
 {
-  rsync -avx --link-dest=$BASEDIR$SOURCEDIR $BASEDIR$SOURCEDIR/ $BASEDIR$TARGETDIR
-  cd $BASEDIR$TARGETDIR
+  rsync -avx --link-dest=${BASEDIR}${SOURCEDIR} ${BASEDIR}$SOURCEDIR/ ${BASEDIR}${TARGETDIR}
+  cd ${BASEDIR}${TARGETDIR}
 }
 
 do_sync_pkg()
 {
   while read line
   do
-     cp -al $line $BASEDIR$TARGETDIR/Packages
+     cp -al $line ${BASEDIR}${TARGETDIR}/Packages
   done < $PACKAGELIST_PATH
-  cd $BASEDIR$TARGETDIR/Packages
-  createrepo -v --database $BASEDIR$TARGETDIR/Packages
+  cd ${BASEDIR}${TARGETDIR}/Packages
+  createrepo -v --database ${BASEDIR}${TARGETDIR}/Packages
 }
 
 # Main #######################################################
@@ -79,7 +79,7 @@ if [[ -z $SOURCEDIR && -z $PACKAGELIST_PATH ]]; then
   read -p "Please enter the source directory: " SOURCEDIR
 fi
 
-if [[ -z $TARGETDIR ]]; then
+if [[ -z ${TARGETDIR} ]]; then
   read -p "Please enter the target directory: " TARGETDIR
 fi
 
