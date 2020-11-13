@@ -41,6 +41,7 @@ do_sync_repo()
 {
   rsync -avx --link-dest=${BASEDIR}${SOURCEDIR} ${BASEDIR}$SOURCEDIR/ ${BASEDIR}${TARGETDIR}
   cd ${BASEDIR}${TARGETDIR}
+  createrepo -v --database ${BASEDIR}${TARGETDIR}
 }
 
 do_sync_pkg()
