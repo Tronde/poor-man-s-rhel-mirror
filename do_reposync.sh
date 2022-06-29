@@ -19,7 +19,7 @@ echo \# `date +%Y-%m-%dT%H:%M` - START REPOSYNC \# > $LOG
 
 for REPO in "${REPOID[@]}"
   do
-    reposync --gpgcheck -l --repoid=$REPO --download_path=$BASEDIR --download-metadata -n >> $LOG
+    reposync --gpgcheck --repoid=$REPO --download_path=$BASEDIR --download-metadata -n >> $LOG
 done
 
 echo \# `date +%Y-%m-%dT%H:%M` - END REPOSYNC \# >> $LOG
