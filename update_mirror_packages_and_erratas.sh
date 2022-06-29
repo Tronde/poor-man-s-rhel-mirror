@@ -5,7 +5,7 @@
 #
 # When all local repos were updated the Red Hat Errata Information are downloaded from the web and added to the local repos. This way you could provide Red Hat Errata Information to systems which are not connected to the internet or using repos from local mirror only.
 #
-# License: MIT copyright (c) 2016 Joerg Kastning <joerg.kastning(aet)uni-bielefeld(dot)de>
+# License: MIT copyright (c) 2019 Joerg Kastning <joerg.kastning(aet)uni-bielefeld(dot)de>
 ##############################################################################
 
 # Variables ##################################################################
@@ -44,8 +44,8 @@ bash $PROGDIR/do_reposync.sh >> $LOG
 
 echo "\n" >> $LOG
 echo \# `date +%Y-%m-%dT%H:%M` - Implement Errata-Information \# >> $LOG
-remove_older_updateinfo >> $LOG
-deploy_updateinfo >> $LOG
+#remove_older_updateinfo >> $LOG
+#deploy_updateinfo >> $LOG
 echo "\n" >> $LOG
 echo \# `date +%Y-%m-%dT%H:%M` - Update rhel-STAGE-repositories \# >> $LOG
 bash $PROGDIR/update_multiple_stages.sh >> $LOG

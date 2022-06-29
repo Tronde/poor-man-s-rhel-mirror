@@ -7,7 +7,7 @@
 # be synchronized.
 #
 # Author: Joerg Kastning <joerg.kastning@uni-bielefel.de>
-# License: MIT copyright (c) 2016 Joerg Kastning <joerg.kastning(aet)uni-bielefeld(dot)de>
+# License: MIT copyright (c) 2019 Joerg Kastning <joerg.kastning(aet)uni-bielefeld(dot)de>
 
 # Variables
 SCRIPTNAME=`basename ${0}`
@@ -19,6 +19,7 @@ echo \# `date +%Y-%m-%dT%H:%M` - START REPOSYNC \# > $LOG
 
 for REPO in "${REPOID[@]}"
   do
+<<<<<<< HEAD
     reposync --gpgcheck -l --repoid=$REPO --download_path=$BASEDIR --download-metadata -n >> $LOG
     cd $BASEDIR/$REPO
     if [[ -e comps.xml ]]; then
@@ -26,6 +27,9 @@ for REPO in "${REPOID[@]}"
     else
       createrepo -v $BASEDIR/$REPO >> $LOG
     fi
+=======
+    reposync --repoid=$REPO --download-path=$BASEDIR --downloadcomps --download-metadata -n >> $LOG
+>>>>>>> 471d2bda4bcff8ded93c5b49c2621e0a2b86090a
 done
 
 echo \# `date +%Y-%m-%dT%H:%M` - END REPOSYNC \# >> $LOG
