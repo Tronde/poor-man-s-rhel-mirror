@@ -5,13 +5,13 @@
 # Set parameters for your mirror server
 # used in create_yum_repo.sh, refresh_yum_repo.sh and rsync_repo.sh
 HOST="http://fqdn" # FQDN of the local mirror server
-BASEDIR="/var/www/html/rhel-8-repo/" # In this dir the new repos are created
+BASEDIR="/var/www/html/rhel-9-repo/" # In this dir the new repos are created
 
 # Set location to store log files using script name as file name
 LOG="/var/log/${SCRIPTNAME}.log"
 
 # Variables for do_reposync.sh and update_mirror_packages_and_erratas #######
-REPOID=(rhel-8-for-x86_64-appstream-rpms rhel-8-for-x86_64-baseos-rpms)
+REPOID=(rhel-9-for-x86_64-appstream-rpms rhel-9-for-x86_64-baseos-rpms)
 
 # Variables for update_mirror_packages_and_erratas ##########################
 TARGETGZFILENAME="updateinfo.xml.gz"
