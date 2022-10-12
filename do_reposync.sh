@@ -20,6 +20,7 @@ echo \# `date +%Y-%m-%dT%H:%M` - START REPOSYNC \# > $LOG
 for REPO in "${REPOID[@]}"
   do
     reposync --repoid=$REPO --download-path=$BASEDIR --downloadcomps --download-metadata -n >> $LOG
+    refresh_yum_repo.sh -r $REPO
 done
 
 echo \# `date +%Y-%m-%dT%H:%M` - END REPOSYNC \# >> $LOG
