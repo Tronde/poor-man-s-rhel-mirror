@@ -41,7 +41,7 @@ refresh_repo()
 {
 cd $BASEDIR$REPONAME
 createrepo --database $BASEDIR$REPONAME 
-restorecon -R -v $BASEDIR$REPONAME/*
+/sbin/restorecon -R -v $BASEDIR$REPONAME/*
 }
 
 # Hauptteil #######################################################
