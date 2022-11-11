@@ -22,5 +22,15 @@ for REPO in "${REPOID[@]}"
     reposync --gpgcheck --repoid=$REPO --download-path=$BASEDIR --download-metadata -n >> $LOG
 done
 
+if [[ "${REPOID[@]}" =~ epel ]]
+then
+    $PROGDIR/refresh_yum_repo.sh -r epel
+fi
+
+if [[ "${REPOID[@]}" =~ epel-modular ]]
+then
+    $PROGDIR/refresh_yum_repo.sh -r epel-modular
+fi
+
 echo \# `date +%Y-%m-%dT%H:%M` - END REPOSYNC \# >> $LOG
 exit 0

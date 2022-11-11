@@ -37,9 +37,11 @@ This script is for the use case where you want to provide separated stage reposi
 
 You could use `reposync` to sync one or more RHEL repos to each stage repo on your local mirror. But this would cost you a large amount of your bandwith and local disk space. With `rsync_repo.sh` you have to sync the Red Hat repo(s) only once and `rsync` them to the stage repos. The script uses hardlinks to spare your disk space.
 
-## refresh_repo.sh
+## refresh_yum_repo.sh
 
 When you have added some new RPM packages to your repository, you have to refresh the metadata DB to be able to install them on connected hosts. This could be done by this script.
+
+Notice: Using this script on a mirrored RHEL repo the updateinfo.xml.gz file will be removed and the errata information will be lost. I use this script only on my own YUM repos.
 
 ## Wrapper-Scripts
 
