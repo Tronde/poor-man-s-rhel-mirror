@@ -43,7 +43,7 @@ echo \# `date +%Y-%m-%dT%H:%M` - Update Local Mirror \# > $LOG
 bash $PROGDIR/do_reposync.sh >> $LOG
 
 echo "\n" >> $LOG
-echo \# `date +%Y-%m-%dT%H:%M` - Implement Errata-Information \# >> $LOG
+#echo \# `date +%Y-%m-%dT%H:%M` - Implement Errata-Information \# >> $LOG
 #remove_older_updateinfo >> $LOG
 #deploy_updateinfo >> $LOG
 echo "\n" >> $LOG
