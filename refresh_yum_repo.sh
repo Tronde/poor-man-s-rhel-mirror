@@ -40,8 +40,8 @@ check()
 refresh_repo()
 {
 cd $BASEDIR$REPONAME
-createrepo --database $BASEDIR$REPONAME 
-restorecon -R -v $BASEDIR$REPONAME/*
+/bin/createrepo --database $BASEDIR$REPONAME 
+/sbin/restorecon -R -v $BASEDIR$REPONAME/*
 }
 
 # Hauptteil #######################################################
